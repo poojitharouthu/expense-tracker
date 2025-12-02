@@ -1,0 +1,176 @@
+/* ===== GLOBAL ===== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #EC9FAB; /* page background */
+    font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* main layout */
+.page {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    padding: 70px 90px 60px 90px; /* top, right, bottom, left */
+    overflow: hidden;
+}
+
+/* ===== LEFT SIDE ===== */
+
+.left-side {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* --- LOGO --- */
+
+.logo {
+    position: relative;
+    width: 520px;           /* controls logo width AND form width underneath */
+    margin-left: 20px;      /* horizontal position on page */
+}
+
+/* EXPENSE - League Spartan, big, dark brown */
+.logo-expense {
+    display: block;
+    font-family: "League Spartan", sans-serif;
+    font-weight: 800;
+    font-size: 120px;
+    letter-spacing: 0.08em;
+    color: #370808;
+    line-height: 0.9;
+}
+
+/* tracker - Poppins, white, BIG overlap, centered on EXPENSE */
+.logo-tracker {
+    position: absolute;
+    left: 50%;
+    top: 52px;              /* this controls how much overlap you get */
+    transform: translateX(-50%);
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 74px;
+    color: #FFFFFF;
+    pointer-events: none;
+}
+
+/* --- FORM --- */
+
+.expense-form {
+    margin-top: 90px;       /* space under logo */
+    width: 520px;           /* SAME as .logo width so they share center line */
+    display: flex;
+    flex-direction: column;
+    align-items: center;    /* Title, Amount, ADD share same center line */
+    gap: 28px;
+}
+
+.field {
+    width: 80%;             /* <---- makes the blocks slightly shorter (~20% cut) */
+}
+
+/* Title + Amount blocks */
+.field input {
+    width: 100%;
+    padding: 22px 32px;
+    border-radius: 999px;
+    border: none;
+    outline: none;
+    background: #F9E2E6;
+    font-family: "Poppins", sans-serif;
+    font-size: 26px;
+    color: #370808;
+    box-shadow: none;
+}
+
+.field input::placeholder {
+    color: #D49EA8;
+}
+
+/* ADD button */
+.add-btn {
+    margin-top: 10px;
+    padding: 18px 70px;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+    background: #370808;
+    color: #FFFFFF;
+    font-family: "Poppins", sans-serif;
+    font-size: 26px;
+    font-weight: 500;
+}
+
+/* remove default spin buttons from number input (Chrome) */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+/* ===== RIGHT SIDE ===== */
+
+.right-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    flex: 0 0 auto;
+    padding-right: 20px;
+}
+
+/* "all expenses" heading */
+.expenses-title {
+    font-family: "Poppins", sans-serif;
+    font-size: 32px;
+    font-weight: 500;
+    color: #370808;
+    margin-top: 30px;
+    margin-bottom: 22px;
+}
+
+/* light pink box – LESS WIDE, more like a tall card */
+.expenses-panel {
+    width: 520px;          /* ↓ this is the width – not full, more square */
+    height: 520px;
+    background: #F9E2E6;
+    border-radius: 55px;
+    padding: 40px 48px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+/* when there are expenses */
+.expenses-list {
+    list-style: disc;
+    margin: 0;
+    padding-left: 24px;
+    font-family: "Poppins", sans-serif;
+    font-size: 22px;
+    color: #370808;
+}
+
+.expenses-list li + li {
+    margin-top: 10px;
+}
+
+/* when no expenses yet */
+.empty-text {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    font-size: 22px;
+    color: #D49EA8;
+}
