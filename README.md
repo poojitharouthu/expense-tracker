@@ -18,18 +18,19 @@ Technologies Used:
 3. Google Fonts (Poppins & League Spartan)
 4. Jinja2 Templates
 
-
 Project Structure:
+
+```
 expense-tracker/
-│
-├── app.py
-├── requirements.txt
+│── app.py
+│── requirements.txt
 │
 ├── templates/
 │   └── index.html
 │
 └── static/
     └── style.css
+```
 
 
 How to Run:
